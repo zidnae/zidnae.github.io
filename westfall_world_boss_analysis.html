@@ -13304,7 +13304,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span><span class="n">timedelta</span>
@@ -13334,7 +13334,7 @@ div#notebook {
 <span class="n">FIRST_SERVER_RESET</span> <span class="o">=</span> <span class="n">azuregosServerResets</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">doAnalysis</span><span class="p">(</span><span class="n">spawnDatetimes</span><span class="p">,</span> <span class="n">serverResets</span><span class="p">,</span><span class="n">bossName</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">ax1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">ax2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">showTables</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">doAnalysis</span><span class="p">(</span><span class="n">spawnDatetimes</span><span class="p">,</span> <span class="n">serverResets</span><span class="p">,</span><span class="n">bossName</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">ax1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">ax2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">showTables</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="n">spawnsAfterServerReset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">spawnDatetimes</span> <span class="o">-</span> <span class="n">serverResets</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">showTables</span><span class="p">:</span>
         <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">spawnsAfterServerReset</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">bossName</span><span class="si">}</span><span class="s1"> Spawn Times after Server Reset&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)))</span>
@@ -13410,6 +13410,199 @@ div#notebook {
 
 
 
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Azuregos Spawn Times after Server Reset</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0 days 12:50:00</td>
+    </tr>
+    <tr>
+      <td>0 days 12:53:00</td>
+    </tr>
+    <tr>
+      <td>0 days 15:11:00</td>
+    </tr>
+    <tr>
+      <td>0 days 16:45:00</td>
+    </tr>
+    <tr>
+      <td>0 days 16:49:00</td>
+    </tr>
+    <tr>
+      <td>0 days 18:57:00</td>
+    </tr>
+    <tr>
+      <td>0 days 20:26:00</td>
+    </tr>
+    <tr>
+      <td>0 days 20:49:00</td>
+    </tr>
+    <tr>
+      <td>0 days 21:52:00</td>
+    </tr>
+    <tr>
+      <td>0 days 22:41:00</td>
+    </tr>
+    <tr>
+      <td>0 days 23:05:00</td>
+    </tr>
+    <tr>
+      <td>0 days 23:15:00</td>
+    </tr>
+    <tr>
+      <td>0 days 23:46:00</td>
+    </tr>
+    <tr>
+      <td>1 days 00:27:00</td>
+    </tr>
+    <tr>
+      <td>1 days 00:34:00</td>
+    </tr>
+    <tr>
+      <td>1 days 00:42:00</td>
+    </tr>
+    <tr>
+      <td>1 days 00:49:00</td>
+    </tr>
+    <tr>
+      <td>1 days 01:29:00</td>
+    </tr>
+    <tr>
+      <td>1 days 01:53:00</td>
+    </tr>
+    <tr>
+      <td>1 days 03:02:00</td>
+    </tr>
+    <tr>
+      <td>1 days 03:45:00</td>
+    </tr>
+    <tr>
+      <td>1 days 04:48:00</td>
+    </tr>
+    <tr>
+      <td>1 days 06:11:00</td>
+    </tr>
+    <tr>
+      <td>1 days 06:39:00</td>
+    </tr>
+    <tr>
+      <td>1 days 06:40:00</td>
+    </tr>
+    <tr>
+      <td>1 days 06:51:00</td>
+    </tr>
+    <tr>
+      <td>1 days 10:01:00</td>
+    </tr>
+    <tr>
+      <td>1 days 10:13:00</td>
+    </tr>
+    <tr>
+      <td>1 days 11:10:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Azuregos Spawn Times relative to First Spawn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3 days 02:23:00</td>
+    </tr>
+    <tr>
+      <td>3 days 02:40:00</td>
+    </tr>
+    <tr>
+      <td>3 days 03:55:00</td>
+    </tr>
+    <tr>
+      <td>3 days 05:48:00</td>
+    </tr>
+    <tr>
+      <td>3 days 06:06:00</td>
+    </tr>
+    <tr>
+      <td>3 days 15:07:00</td>
+    </tr>
+    <tr>
+      <td>3 days 16:07:00</td>
+    </tr>
+    <tr>
+      <td>3 days 20:01:00</td>
+    </tr>
+    <tr>
+      <td>3 days 22:04:00</td>
+    </tr>
+    <tr>
+      <td>3 days 22:20:00</td>
+    </tr>
+    <tr>
+      <td>4 days 00:41:00</td>
+    </tr>
+    <tr>
+      <td>4 days 04:30:00</td>
+    </tr>
+    <tr>
+      <td>4 days 04:51:00</td>
+    </tr>
+    <tr>
+      <td>4 days 08:12:00</td>
+    </tr>
+    <tr>
+      <td>4 days 14:31:00</td>
+    </tr>
+    <tr>
+      <td>4 days 14:42:00</td>
+    </tr>
+    <tr>
+      <td>4 days 16:23:00</td>
+    </tr>
+    <tr>
+      <td>4 days 17:51:00</td>
+    </tr>
+    <tr>
+      <td>4 days 19:21:00</td>
+    </tr>
+    <tr>
+      <td>4 days 23:04:00</td>
+    </tr>
+    <tr>
+      <td>5 days 00:15:00</td>
+    </tr>
+    <tr>
+      <td>5 days 06:35:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlkAAAHwCAYAAACVA3r8AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4xLjMsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy+AADFEAAAgAElEQVR4nO3de7xvdV0n/tdbUCQ0GeXoJBdRwxQZ83JErVRKa9B6gNNNGa/JSDVaNjmmlmMO6s/KymrSFK1Q8xLaVORQ4A01S+UwIorIiEiCongB7zfs/ftjrR1fN/ucs89hf84+m/18Ph77wbp81lrv7+e7ON/X/qy1v6u6OwAArK0brXcBAAA3REIWAMAAQhYAwABCFgDAAEIWAMAAQhYAwABCFrDXqKq/r6rHrncd21OTP6+qq6rqvetdD7B3E7LYNKrq7PnDcb/1rmWkqvr1qvpYVX25qi6vqr9c75qSpKruP9f05ar6SlX1wvyXq+qw7n5Id79ivWvdgR9K8qNJDunuo6vqmKq6fK0Psre+hyuZ38evzLV+oqp+v6r2GXzMU6vquSOPAWtByGJTqKrDk9w/SSc5bsD+q6rW/f+neRTo0Uke3N03S7I1yVvWt6pJd7+zu28213XXefGBS8u6++PrWd8q3S7Jpd39lbXYWVXtu8KyNXsPV9r/7trJvr5/rvWBSR6e5PFrdVzYyNb9QwH2kMckeXeSU5P82+WoqrrtstGUr1ZVz+ueXVV/sdD28Pm39n3n+bOr6nlV9a4kX01yh6q6RVX9aVVdMf9W/9yl3+qrap+q+r2q+uw8SvGkZfu7bVWdXlWfr6qLq+oJC8c+uqq2VdUXq+rTVfX723md905yZnd/NEm6+1PdfcrCfs6uqudX1Xur6gtV9bdVdcuF9a+vqk/N695RVXedl9++qq5eCpJV9fKqunJhu7+oql9ZOMZzqupdVfWlqjqrqg5azZs0b/tf5unHzft44XzsS6rqB+bll1XVlYuXFqtqv6r63ar6+NxHL6mq/ed1B1XVG+f9fL6q3rm9UFxVfzjv/4tVdW5V3X9efmKSlye533yuvCDJ3ydZPIduW1U3qqqnV9VHq+pzVXXaUh8vnEMnVtXHk7x1N97DHZ1ji332+STPmV/zUQvbb6mqr1XVref5n6iq8+Z2/1RVd1toe2lVPa2qzk/yldpJaOvui5O8K8ndV1nv91bV2+fz7bO1MGJXVXeuqjfN79dFVfWz8/KTkjwyya/Nff53O6oJ1lV3+/Fzg/9JcnGS/5rkXkm+leQ222n36iSvnaefneQvFtYdnmkkbN95/uwkH880KrNvkhsn+ZskL01yQJJbJ3lvkp+f2/9Ckg8lOSTJv0vy5mX7e3uSFye5aaYPqc8kedC87p+TPHqevlmS+26n/kcl+XySp2YaAdln2fqzk3wiyVFzjX+17DU+PsnNk+yX5A+SnLew7uNJ7jVPX5TkkiR3WVh3j4VjfDTJnZLsP8//1rI6vqMvl9X3X+bpxyW5JsnPJdknyXPn47xoru/Hknwpyc3m9n+Q5PQkt5xfw98lef687vlJXjK/RzfONKpZO+jDW83v6VOSfCrJTRdq+seFtsckuXzZ9r+SKdAfMtf50lx7Ti297lfO/b//bryHOzrHlvrsl+b690/yZ0met7D9E5P8wzx9zyRXJrnP3MePTXJpkv3m9ZcmOS/JoSvVOrfpJN87T985yRVJ/tsq631tkt/I9Av/TZP80Lz8gCSXze/9vnOdn01y13n9qUmeu97/rvjxs7OfdS/Aj5/RP5nuo/lWkoPm+Q8vfggstHtaknOXPkyyupB18sL62yT5xuKHUZITkrxtnn7r0ofLPP/gpf3NH2LfTnLzhfXPT3LqPP2OJP9z6TXs5PU+MlOA+0qSzyV5+sK6s7MQeJIcmeSbyz/I53UHzvXdYp5/VZJfTfLvM4Ws38kUHG+f5OokN1o4xjMX9vNfM3+ob68vl9W3GLI+srDuP8zb3GZh2ecyBdKaX+8dF9bdL8nH5umTk/xt5jCwi+fPVZkuhy3VtLOQdWHmcDzPf898/u278LrvsDvv4SrOsccl+fiyfT04ySUL8+9K8ph5+k+SPGdZ+4uSPHCevjTJ43dSayf54lxrZwpO+62y3lcmOSXTPW6L+3x4kncuW/bSJL85T58aIcvPBvhxuZDN4LFJzuruz87zr8nCJcMkqaqHJHlykod199d2Yd+XLUzfLtMoyRXzpZerM30w3Hpef9tl7Renb5vk8939pYVl/5Lk4Hn6xEwjQx+uqnOq6ie2V1B3v7q7H5wpJP1CkpOr6j9u57j/Mtd8UE2XM39rvsz1xUwfsEmydKnv7ZlCxQMyhb6zM92D88BMH4j/urDfTy1MfzXT6Nvu+PTC9Nfm17d82c2SbEnyXUnOXej7f5iXJ8kLMo1mnjVfdnz69g5YVU+pqgvnS1hXJ7lFru2D1bhdkr9eqOPCTAH6NgttLltxy9kO3sOdnWMr7futSfavqvtU1e0yhdK/Xqj1KUv7mvd3aKbzcVW1zu6Z6X14eKZRsQMW9r+jen8tU0B+b1VdUFWPX9juPsvqemSmgA8bxprdFAl7o/menJ9Nsk9VLX3w75fkwKr6/u5+f1V9X5JXJPnJ7l78QPlKpg/uJSv9A98L05dl+q39oO6+ZoW2V2S6hLTk0IXpTya5ZVXdfCFoHZbp0l66+yNJTpjvI/rJJG+oqlv1Dm7A7u5vJXl9VT0t0+XBM1c47mGZRlk+m+Q/Jzk+08jHpZnCxVWZPgSTKWS9IMnl8/Q/ZroE9/V5fj19NlPgumt3f2L5yrlPn5IpUNw1yduq6pzu/o4byuf7r56W5EFJLujuf62qxT64zq5XWHZZptGfdy1fUdMfYGxvu+vu/Lrv4Wuy43PsOvueX8NpmUaQPp3kjQvn2GWZLiU+b0dlrLLWTnJaVR2f5FmZLpvu8P+J7v5UkickSVX9UJI3V9U75u3e3t0/en1qgvVmJIsbuodlGkU4MtNv8HdPcpck70zymKr67kyXkZ7Z3f+4bNvzkjygqg6rqlskecaODtTdVyQ5K8nvVdV3zzdA37GqHjg3OS3Jk6vq4Ko6MNOH+dK2lyX5pyTPr6qbzjcfn5jpHrFU1aOqass8WnT1vNm3l9cw3/j841V18/n4D8l0z9h7Fpo9qqqOrKrvynQZ7Q3d/e1M9zF9I9Plqe9K8v8te30fyRRkHpXkHd39xUwf2j+VdQ5Zc7+8LMkLF27oPnhpBG++uft7q6oyXdr6dlbov0x9cE2m++H2rapnJfnuHRz600luNZ8fS16S5HnzqNHSjebHr/a17Og9XMU5tj2vyTTK9Mh5esnLkvzCPMpVVXXA0rFXW+8KfivJSVX173dWb1X9TFUt/eJxVabw9O0kb0xyp6p6dFXdeP65d1XdZW776SR3uB41wh4hZHFD99gkf97dH+/pr7Q+Nf/2/MeZPnCOTvJ9SX6/Fv7KMEm6+01J/jLJ+Znu1XrjKo73mCQ3yXSD+1VJ3pDpnpxk+kA7a97f+5KckekDfenD/oRM9+x8MtPlnN+ca0iSY5NcMNf2h0ke0d1fX+H4X0zy65luEL86031Tv7gsQL4q0z0tn8p0s/Evz8tfmeny4Sfm+t+9wv7fnuRzfe3XLbw90yjP+7bfJXvM0zJdEnz3fLnzzZne2yQ5Yp7/cqY/Inhxd5+9wj7OzPQXg/8vU198PTu4XNbdH850D9Il82Wt22Z6f07PdGnyS5n68T678Dp29h7u6BzbXp3vyTQye9v59S0t35ZpJOmP531dnOm+rt3W3R/IdF48dRX13jvJe+bz+vQkT+7uj80jbT+W5BGZ/n/4VJLfzjQKnSR/muTIuc//5vrUCyPVNMIL7GnzCMVLuvt2e/CYZ2e6mf/le+qYAJuVkSzYQ6pq/6p6aFXtW1UHJ/nNXHsDMgA3MDsNWVX1ZzV96d8Ht7O+quqPavryxPOr6p5rXybcIFSmr2G4KtPltQsz3SAMwA3QTi8XVtUDMt3H8MruPmqF9Q/N9MV3D81038Efdveu3H8AAHCDs9ORrO5+R6ZvH96e4zMFsO7ud2f60/gd3oQJAHBDtxb3ZB2c7/zrm8tz7RcoAgBsSmvxZaQrfUnfitcga3qw50lJcsABB9zrzne+8xocHgBgrHPPPfez3b1l5y2vtRYh6/J85zdIH5Lpe02uo6cnyZ+SJFu3bu1t27atweEBAMaqqn/Z1W3W4nLh6Zm+Obuq6r5JvjB/yy8AwKa105GsqnptpofCHlRVl2f6bp8bJ0l3vyTTt1Y/NNM3BX81yc+NKhYAYKPYacjq7hN2sr6TPHHNKgIAuAHwje8AAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADCFkAAAMIWQAAAwhZAAADrCpkVdWxVXVRVV1cVU9fYf1hVfW2qnpfVZ1fVQ9d+1IBADaOnYasqtonyYuSPCTJkUlOqKojlzV7ZpLTuvseSR6R5MVrXSgAwEaympGso5Nc3N2XdPc3k7wuyfHL2nSS756nb5Hkk2tXIgDAxrPvKtocnOSyhfnLk9xnWZtnJzmrqn4pyQFJHrwm1QEAbFCrGcmqFZb1svkTkpza3YckeWiSV1XVdfZdVSdV1baq2vaZz3xm16sFANggVhOyLk9y6ML8Ibnu5cATk5yWJN39z0lumuSg5Tvq7lO6e2t3b92yZcvuVQwAsAGsJmSdk+SIqrp9Vd0k043tpy9r8/EkD0qSqrpLppBlqAoA2LR2GrK6+5okT0pyZpILM/0V4QVVdXJVHTc3e0qSJ1TV+5O8Nsnjunv5JUUAgE1jNTe+p7vPSHLGsmXPWpj+UJIfXNvSAAA2Lt/4DgAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAXLHHPMelewOs9+9u5tt6df3+7Wubt29/Xtbp27u93hh+/edgceuHvb7en3fU+/D7trd/tzI9go78ENWXX3uhx469atvW3btnU5NuxIVbJO/1vskt2tc0+/vo1yPNutrRt6nRvBRnkPNoqqOre7t+7KNkayAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAYQsgAABhCyAAAGELIAAAZYVciqqmOr6qKquriqnr6dNj9bVR+qqguq6jVrWyYAwMay784aVNU+SV6U5EeTXJ7knKo6vbs/tNDmiCTPSPKD3X1VVd16VMEAABvBakayjk5ycXdf0t3fTPK6JMcva/OEJC/q7quSpLuvXNsyAQA2ltWErIOTXLYwf/m8bNGdktypqt5VVe+uqmPXqkAAgI1op5cLk9QKy3qF/RyR5JgkhyR5Z1Ud1d1Xf8eOqk5KclKSHHbYYbtcLADARrGakazLkxy6MH9Ikk+u0OZvu/tb3f2xJBdlCl3fobtP6e6t3b11y5Ytu1szAMBebzUh65wkR1TV7avqJkkekeT0ZW3+JskPJ0lVHZTp8uEla1koAMBGstOQ1d3XJHlSkjOTXJjktO6+oKpOrqrj5mZnJvlcVX0oyduSPLW7PzeqaACAvV11L7+9as/YunVrb9u2bV2ODTtSlazT/xa7ZHfr3NOvb6Mcz3Zr64Ze50awUd6DjaKqzu3urbuyjW98BwAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGGBVIauqjq2qi6rq4qp6+g7a/XRVdVVtXbsSAQA2np2GrKraJ8mLkjwkyZFJTqiqI1dod/Mkv5zkPWtdJADARrOakayjk1zc3Zd09zeTvC7J8Su0e06S30ny9TWsDwBgQ1pNyDo4yWUL85fPy/5NVd0jyaHd/cY1rA0AYMNaTciqFZb1v62sulGSFyZ5yk53VHVSVW2rqm2f+cxnVl8lAMAGs5qQdXmSQxfmD0nyyYX5myc5KsnZVXVpkvsmOX2lm9+7+5Tu3trdW7ds2bL7VQMA7OVWE7LOSXJEVd2+qm6S5BFJTl9a2d1f6O6Duvvw7j48ybuTHNfd24ZUDACwAew0ZHX3NUmelOTMJBcmOa27L6iqk6vquNEFAgBsRPuuplF3n5HkjGXLnrWdtsdc/7IAADY23/gOADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwgJAFADCAkAUAMICQBQAwwKpCVlUdW1UXVdXFVfX0Fdb/alV9qKrOr6q3VNXt1r5UAICNY6chq6r2SfKiJA9JcmSSE6rqyGXN3pdka3ffLckbkvzOWhcKALCRrGYk6+gkF3f3Jd39zSSvS3L8YoPuflt3f3WefXeSQ9a2TACAjWU1IevgJJctzF8+L9ueE5P8/fUpCgBgo9t3FW1qhWW9YsOqRyXZmuSB21l/UpKTkuSwww5bZYkAABvPakayLk9y6ML8IUk+ubxRVT04yW8kOa67v7HSjrr7lO7e2t1bt2zZsjv1AgBsCKsJWeckOaKqbl9VN0nyiCSnLzaoqnskeWmmgHXl2pcJALCx7DRkdfc1SZ6U5MwkFyY5rbsvqKqTq+q4udkLktwsyeur6ryqOn07uwMA2BRWc09WuvuMJGcsW/ashekHr3FdAAAbmm98BwAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIAgAYQMgCABhAyAIAGGBVIauqjq2qi6rq4qp6+grr96uqv5zXv6eqDl/rQgEANpKdhqyq2ifJi5I8JMmRSU6oqiOXNTsxyVXd/b1JXpjkt9e6UACAjWQ1I1lHJ7m4uy/p7m8meV2S45e1OT7JK+bpNyR5UFXV2pUJALCxrCZkHZzksoX5y+dlK7bp7muSfCHJrdaiQACAjWjfVbRZaUSqd6NNquqkJCfNs9+oqg+u4vibzUFJPrveReyF9mi/bJBx2IOqdq9P9vTr28PH2+P9skG22+1+2V17ul920x7vlz1po5wrG8T37eoGqwlZlyc5dGH+kCSf3E6by6tq3yS3SPL55Tvq7lOSnJIkVbWtu7fuasE3dPplZfrluvTJyvTLyvTLyvTLdemTlVXVtl3dZjWXC89JckRV3b6qbpLkEUlOX9bm9CSPnad/Oslbu/s6I1kAAJvFTkeyuvuaqnpSkjOT7JPkz7r7gqo6Ocm27j49yZ8meVVVXZxpBOsRI4sGANjbreZyYbr7jCRnLFv2rIXpryf5mV089im72H6z0C8r0y/XpU9Wpl9Wpl9Wpl+uS5+sbJf7pVzVAwBYex6rAwAwwLqErJ09pmczqqpLq+oDVXXe7vwFww1FVf1ZVV25+PUeVXXLqnpTVX1k/u+/W88a18N2+uXZVfWJ+Zw5r6oeup41roeqOrSq3lZVF1bVBVX15Hn5pj1ndtAnm/p8qaqbVtV7q+r9c7/8z3n57efHwX1kfjzcTda71j1pB/1yalV9bOF8uft617qnVdU+VfW+qnrjPL/L58oeD1mrfEzPZvXD3X33Tf6ns6cmOXbZsqcneUt3H5HkLfP8ZnNqrtsvSfLC+Zy5+3zv5GZzTZKndPddktw3yRPnf0828zmzvT5JNvf58o0kP9Ld35/k7kmOrar7ZnoM3Avnc+WqTI+J20y21y9J8tSF8+W89Stx3Tw5yYUL87t8rqzHSNZqHtPDJtXd78h1v2Nt8bFNr0jysD1a1F5gO/2y6XX3Fd39f+fpL2X6B/HgbOJzZgd9sqn15Mvz7I3nn07yI5keB5dssnMl2WG/bGpVdUiSH0/y8nm+shvnynqErNU8pmcz6iRnVdW58zfjc63bdPcVyfQBkuTW61zP3uRJVXX+fDlx01wSW0lVHZ7kHkneE+dMkuv0SbLJz5f58s95Sa5M8qYkH01y9fw4uGSTfh4t75fuXjpfnjefLy+sqv3WscT18AdJfi3Jv87zt8punCvrEbJW9QieTegHu/uemS6jPrGqHrDeBbHX+5Mkd8w0xH9Fkt9b33LWT1XdLMlfJfmV7v7ietezN1ihTzb9+dLd3+7uu2d6csnRSe6yUrM9W9X6W94vVXVUkmckuXOSeye5ZZKnrWOJe1RV/USSK7v73MXFKzTd6bmyHiFrNY/p2XS6+5Pzf69M8teZ/gFg8umq+p4kmf975TrXs1fo7k/P/zj+a5KXZZOeM1V140xh4tXd/b/nxZv6nFmpT5wv1+ruq5OcnemetQPnx8Elm/zzaKFfjp0vO3d3fyPJn2dznS8/mOS4qro00y1NP5JpZGuXz5X1CFmreUzPplJVB1TVzZemk/xYEg/PvtbiY5sem+Rv17GWvcZSiJj9p2zCc2a+T+JPk1zY3b+/sGrTnjPb65PNfr5U1ZaqOnCe3j/JgzPdr/a2TI+DSzbZuZJst18+vPBLSmW692jTnC/d/YzuPqS7D8+UUd7a3Y/Mbpwr6/JlpPOfDv9Brn1Mz/P2eBF7kaq6Q6bRq2T6Fv7XbNY+qarXJjkmyUFJPp3kN5P8TZLTkhyW5ONJfqa7N9VN4Nvpl2MyXfrpJJcm+fml+5A2i6r6oSTvTPKBXHvvxK9nugdpU54zO+iTE7KJz5equlumm5X3yTTAcFp3nzz/+/u6TJfE3pfkUfPozaawg355a5ItmS6TnZfkFxZukN80quqYJP+9u39id84V3/gOADCAb3wHABhAyAIAGEDIAgAYQMgCABhAyAIAGEDIghuwqvrysvnHVdUfr1c9C3VsmZ9m/76qun9V/foa7PO+8z7Pq6oLq+rZa1Dq9ann0qr6wPxYkrdX1e3WeP8PW3jwM7AXErKAXVZV+1zPXTwoyYe7+x7d/c5M3+N0fWt4RZKT5seDHJXpe7JWu699d95ql2pZ8sPdfbdM36L9zOtzjBU8LImQBXsxIQs2qaq6XVW9ZR5peUtVHTYvP7Wqfnqh3YbtC/0AAASLSURBVJfn/x5TVW+rqtck+cD8pIL/U1Xvr6oPVtXDVzjGE6rqnLnNX1XVd1XV3ZP8TpKHzqNOv51k/3n61fN2j6qq987LXroUYqrqy1V1clW9J8n9lh3u1pmeybf0LLYPzdscMD8Q+Zx55Oz4efnjqur1VfV3mR7O/pfzFyUv1X5qVf3U/PDcF8zbn19VP79Sf+yku/85Cw+TXen1zT+nzn35gar6b3PbO1bVP9T08Ph3VtWdq+oHkhyX5AXzPu64k+MD6+B6/fYG7PX2r6rzFuZvmWsfY/XHSV7Z3a+oqscn+aNMoyM7cnSSo7r7Y1X1U0k+2d0/niRVdYsV2v/v7n7ZvP65SU7s7v9VVc9KsrW7nzSve+I8ApWqukuSh2d6aPq3qurFSR6Z5JVJDkjywe5+1grHemGSi6rq7CT/kOQV3f31JL+R6bEYj58fH/LeqnrzvM39ktytuz9fVf9pPu4ZNT3y60FJfjHJiUm+0N33rqr9kryrqs5a3h876bdjMz25YEev74IkB3f3UXO7A+dtT8n0bdsfqar7JHlxd/9IVZ2e5I3d/YadHBtYJ0IW3LB9bSm8JNPoTZKt8+z9kvzkPP2qTKNLO/PehUDxgSS/O49EvXG+7LfcUXO4OjDJzZKcuYpjPCjJvZKcU1VJsn+ufcDztzM9+Pg65keBvDrTsz//c6bHyBwzzx9XVf99bnrTTI/bSZI3LTxu5++T/NEcpI5N8o7u/lpV/ViSuy2M7t0iyRFJvrmsP1bytqq6zVz/0uXC7b2+v0tyh6r6X0n+T6bRtZsl+YEkr5/bJsl+OzgesBcRsoAlS8/YuibzrQQ1fbLfZKHNV/6tcff/q6p7JXlokudX1VndffKyfZ6a5GHd/f454B2zijoq0yjUM1ZY9/Xu/vZ2X0D3R5P8SVW9LMlnqupW8/5+qrsv+o6DTKNCi6/n6/Mo2H/MNNL02oV6fqm7z1y2/TGL22/HD89tTk1ycpJf3dHrq6rvn4//xCQ/m+RXkly9GJSBjcM9WbB5/VOmJ8wn0+Wqf5ynL8000pIkxye58UobV9Vtk3y1u/8iye8muecKzW6e5IqquvF8jO351twmSd6S5Ker6tbzcW5Zq/jLvKr68bp2uOeITKNeV2caPfulpXVVdY8d7OZ1SX4uyf1z7ajbmUl+cam+qrpTVR2ws3qWdPfXMoWlx1TVLbf3+qrqoCQ36u6/SvI/ktyzu7+Y5GNV9TNz25qDWJJ8KVP/AnspIQs2r19O8nNVdX6SRyd58rz8ZUkeWFXvTfIdoz3L/IdM9zedl+m+p+eu0OZ/JHlPkjcl+fAOajklyflV9er5hvVnZrpcdv687fes4vU8OtM9Wedluvz5yHnU6zmZguL5VfXBeX57zkrygCRv7u5vzstenuRDSf7vvP1Ls4tXAbr7ikwjY0/cwes7OMnZc/2nJlka6XpkkhOr6v2Z7ts6fl7+uiRPnW/md+M77IWqu3feCgCAXWIkCwBgACELAGAAIQsAYAAhCwBgACELAGAAIQsAYAAhCwBgACELAGCA/x+RRdaZQLZuJAAAAABJRU5ErkJggg==
@@ -13455,7 +13648,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">kazzakSpawnDatetimes</span> <span class="o">=</span> <span class="n">toDatetimes</span><span class="p">(</span><span class="n">kazzakSpawnTimes</span><span class="p">)</span>
@@ -13470,6 +13663,199 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Kazzak Spawn Times after Server Reset</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0 days 14:19:00</td>
+    </tr>
+    <tr>
+      <td>0 days 18:37:00</td>
+    </tr>
+    <tr>
+      <td>0 days 19:15:00</td>
+    </tr>
+    <tr>
+      <td>0 days 19:53:00</td>
+    </tr>
+    <tr>
+      <td>0 days 21:04:00</td>
+    </tr>
+    <tr>
+      <td>0 days 21:23:00</td>
+    </tr>
+    <tr>
+      <td>0 days 23:08:00</td>
+    </tr>
+    <tr>
+      <td>1 days 00:34:00</td>
+    </tr>
+    <tr>
+      <td>1 days 00:35:00</td>
+    </tr>
+    <tr>
+      <td>1 days 00:36:00</td>
+    </tr>
+    <tr>
+      <td>1 days 01:33:00</td>
+    </tr>
+    <tr>
+      <td>1 days 03:26:00</td>
+    </tr>
+    <tr>
+      <td>1 days 03:33:00</td>
+    </tr>
+    <tr>
+      <td>1 days 04:34:00</td>
+    </tr>
+    <tr>
+      <td>1 days 05:25:00</td>
+    </tr>
+    <tr>
+      <td>1 days 05:29:00</td>
+    </tr>
+    <tr>
+      <td>1 days 06:21:00</td>
+    </tr>
+    <tr>
+      <td>1 days 06:38:00</td>
+    </tr>
+    <tr>
+      <td>1 days 07:10:00</td>
+    </tr>
+    <tr>
+      <td>1 days 08:15:00</td>
+    </tr>
+    <tr>
+      <td>1 days 08:41:00</td>
+    </tr>
+    <tr>
+      <td>1 days 08:47:00</td>
+    </tr>
+    <tr>
+      <td>1 days 09:34:00</td>
+    </tr>
+    <tr>
+      <td>1 days 10:04:00</td>
+    </tr>
+    <tr>
+      <td>1 days 10:10:00</td>
+    </tr>
+    <tr>
+      <td>1 days 10:34:00</td>
+    </tr>
+    <tr>
+      <td>1 days 10:36:00</td>
+    </tr>
+    <tr>
+      <td>1 days 10:54:00</td>
+    </tr>
+    <tr>
+      <td>1 days 11:50:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Kazzak Spawn Times relative to First Spawn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3 days 04:41:00</td>
+    </tr>
+    <tr>
+      <td>3 days 05:26:00</td>
+    </tr>
+    <tr>
+      <td>3 days 07:35:00</td>
+    </tr>
+    <tr>
+      <td>3 days 13:18:00</td>
+    </tr>
+    <tr>
+      <td>3 days 16:43:00</td>
+    </tr>
+    <tr>
+      <td>3 days 18:30:00</td>
+    </tr>
+    <tr>
+      <td>3 days 20:55:00</td>
+    </tr>
+    <tr>
+      <td>3 days 22:25:00</td>
+    </tr>
+    <tr>
+      <td>3 days 22:39:00</td>
+    </tr>
+    <tr>
+      <td>3 days 23:47:00</td>
+    </tr>
+    <tr>
+      <td>4 days 01:35:00</td>
+    </tr>
+    <tr>
+      <td>4 days 05:01:00</td>
+    </tr>
+    <tr>
+      <td>4 days 08:01:00</td>
+    </tr>
+    <tr>
+      <td>4 days 08:20:00</td>
+    </tr>
+    <tr>
+      <td>4 days 10:34:00</td>
+    </tr>
+    <tr>
+      <td>4 days 11:24:00</td>
+    </tr>
+    <tr>
+      <td>4 days 11:39:00</td>
+    </tr>
+    <tr>
+      <td>4 days 12:09:00</td>
+    </tr>
+    <tr>
+      <td>4 days 13:55:00</td>
+    </tr>
+    <tr>
+      <td>4 days 20:59:00</td>
+    </tr>
+    <tr>
+      <td>4 days 22:25:00</td>
+    </tr>
+    <tr>
+      <td>4 days 22:42:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -13522,7 +13908,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Using Taerar as a proxy for all the emerald dragons, should be close enough</span>
@@ -13539,6 +13925,124 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Emerald Dragons Spawn Times after Server Reset</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0 days 13:09:00</td>
+    </tr>
+    <tr>
+      <td>0 days 13:40:00</td>
+    </tr>
+    <tr>
+      <td>0 days 14:34:00</td>
+    </tr>
+    <tr>
+      <td>0 days 18:15:00</td>
+    </tr>
+    <tr>
+      <td>0 days 19:35:00</td>
+    </tr>
+    <tr>
+      <td>0 days 21:05:00</td>
+    </tr>
+    <tr>
+      <td>0 days 22:24:00</td>
+    </tr>
+    <tr>
+      <td>1 days 00:30:00</td>
+    </tr>
+    <tr>
+      <td>1 days 01:03:00</td>
+    </tr>
+    <tr>
+      <td>1 days 01:19:00</td>
+    </tr>
+    <tr>
+      <td>1 days 01:40:00</td>
+    </tr>
+    <tr>
+      <td>1 days 06:14:00</td>
+    </tr>
+    <tr>
+      <td>1 days 06:55:00</td>
+    </tr>
+    <tr>
+      <td>1 days 09:45:00</td>
+    </tr>
+    <tr>
+      <td>1 days 10:55:00</td>
+    </tr>
+    <tr>
+      <td>1 days 11:39:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Emerald Dragons Spawn Times relative to First Spawn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3 days 03:25:00</td>
+    </tr>
+    <tr>
+      <td>3 days 04:10:00</td>
+    </tr>
+    <tr>
+      <td>3 days 06:37:00</td>
+    </tr>
+    <tr>
+      <td>3 days 15:19:00</td>
+    </tr>
+    <tr>
+      <td>3 days 21:10:00</td>
+    </tr>
+    <tr>
+      <td>4 days 04:33:00</td>
+    </tr>
+    <tr>
+      <td>4 days 07:15:00</td>
+    </tr>
+    <tr>
+      <td>4 days 14:10:00</td>
+    </tr>
+    <tr>
+      <td>4 days 16:53:00</td>
+    </tr>
+    <tr>
+      <td>4 days 21:55:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -13591,7 +14095,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="kc">None</span>
